@@ -85,3 +85,7 @@ $RECYCLE.BIN/
 config.yml
 config.yaml
 dashboard.env
+.secret
+.secrets
+*.secret
+*.secrets
