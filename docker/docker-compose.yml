@@ -37,6 +37,7 @@ services:
 volumes:
   data:
     external: true
+    name: ${COMPOSE_PROJECT_NAME}_data
 
 networks:
   netbird:
