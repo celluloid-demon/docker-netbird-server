@@ -36,7 +36,7 @@ services:
 
 volumes:
   data:
-    external: true
+    # external: true
     # name: ${COMPOSE_PROJECT_NAME}_data
 
 networks:
