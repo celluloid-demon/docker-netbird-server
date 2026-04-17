@@ -1,15 +1,15 @@
 ---
 services:
   # UI dashboard
-  dashboard:
-    image: netbirdio/dashboard:latest
+  netbird-dashboard:
+    image: ${DASHBOARD_IMAGE:-netbirdio/dashboard}:${DASHBOARD_TAG:-latest}
     container_name: netbird-dashboard
     restart: unless-stopped
     networks: [netbird, nginx-proxy-manager]
     ports:
       - '127.0.0.1:8080:80'
     env_file:
-      - ./dashboard.env
+      - ${DASHBOARD_ENV_FILE:-./dashboard.env}
     logging:
       driver: "json-file"
       options:
@@ -18,7 +18,7 @@ services:
 
   # Combined server (Management + Signal + Relay + STUN)
   netbird-server:
-    image: netbirdio/netbird-server:latest
+    image: ${SERVER_IMAGE:-netbirdio/netbird-server}:${SERVER_TAG:-latest}
     container_name: netbird-server
     restart: unless-stopped
     networks: [netbird, nginx-proxy-manager]
@@ -27,7 +27,7 @@ services:
       - '3478:3478/udp'
     volumes:
       - netbird_data:/var/lib/netbird
-      - ./config.yaml:/etc/netbird/config.yaml
+      - ${CONFIG_FILE:-./config.yaml}:/etc/netbird/config.yaml
     command: ["--config", "/etc/netbird/config.yaml"]
     logging:
       driver: "json-file"
