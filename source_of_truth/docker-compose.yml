@@ -1,4 +1,13 @@
----
+
+# Rendered by official install script:
+#   curl -fsSL https://github.com/netbirdio/netbird/releases/latest/download/getting-started.sh | bash
+
+# Generated files:
+#   docker-compose.yml  Docker Compose configuration with all services
+#   config.yaml         Combined server configuration (management, signal, relay, STUN)
+#   dashboard.env       Environment variables for the dashboard container
+#   proxy.env           Environment variables for the proxy container (only when proxy is enabled)
+
 services:
   # UI dashboard
   dashboard:

@@ -80,3 +80,4 @@ $RECYCLE.BIN/
 ### Custom ###
 .env
 dashboard.env
+npm-advanced-config.txt
