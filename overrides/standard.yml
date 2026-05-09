@@ -1,0 +1,8 @@
+services:
+  dashboard:
+    image: netbirdio/dashboard:${NB_DASHBOARD_TAG}
+
+  netbird-server:
+    image: netbirdio/netbird-server:${NB_SERVER_TAG}
+    volumes:
+      - ./data:/var/lib/netbird
