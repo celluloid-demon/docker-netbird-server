@@ -5,4 +5,4 @@ services:
   netbird-server:
     image: netbirdio/netbird-server:${NB_SERVER_TAG}
     volumes:
-      - ./data:/var/lib/netbird
+      - ${VOLUMES}/data:/var/lib/netbird
